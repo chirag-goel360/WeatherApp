@@ -48,12 +48,12 @@ class _LocationScreenState extends State<LocationScreen> {
           image: DecorationImage(
             image: AssetImage(
               'images/location_background.jpg',
-              ),
+            ),
             fit: BoxFit.cover,
             colorFilter: ColorFilter.mode(
-                Colors.white.withOpacity(0.5), 
-                BlendMode.dstATop,
-                ),
+              Colors.white.withOpacity(0.5),
+              BlendMode.dstATop,
+            ),
           ),
         ),
         constraints: BoxConstraints.expand(),
@@ -78,10 +78,10 @@ class _LocationScreenState extends State<LocationScreen> {
                   FlatButton(
                     onPressed: () async{
                       var typedName = await Navigator.push(
-                          context,MaterialPageRoute(
-                              builder: (context){
-                        return CityScreen();
-                      },
+                        context,MaterialPageRoute(
+                        builder: (context){
+                          return CityScreen();
+                        },
                       ),
                       );
                       if(typedName != null) {
@@ -99,7 +99,7 @@ class _LocationScreenState extends State<LocationScreen> {
               Padding(
                 padding: EdgeInsets.only(
                   left: 15.0,
-                  ),
+                ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
@@ -117,7 +117,7 @@ class _LocationScreenState extends State<LocationScreen> {
               Padding(
                 padding: EdgeInsets.only(
                   right: 15.0,
-                  ),
+                ),
                 child: Text(
                   '$weatherMessage in $cityName',
                   textAlign: TextAlign.right,
