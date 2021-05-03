@@ -6,6 +6,7 @@ import 'package:weatherapp/utilities/constants.dart';
 class LocationScreen extends StatefulWidget {
   LocationScreen({this.locationWeather});
   final locationWeather;
+
   @override
   _LocationScreenState createState() => _LocationScreenState();
 }
@@ -23,9 +24,9 @@ class _LocationScreenState extends State<LocationScreen> {
     updateUI(widget.locationWeather);
   }
 
-  void updateUI(dynamic weatherData){
+  void updateUI(dynamic weatherData) {
     setState(() {
-      if(weatherData == null){
+      if (weatherData == null) {
         temperature = 0;
         weatherIcon = 'Error';
         weatherMessage = 'Unable to get weather data';
@@ -66,7 +67,7 @@ class _LocationScreenState extends State<LocationScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   FlatButton(
-                    onPressed: () async{
+                    onPressed: () async {
                       var weatherData = await weather.getLocationWeather();
                       updateUI(weatherData);
                     },
@@ -76,16 +77,18 @@ class _LocationScreenState extends State<LocationScreen> {
                     ),
                   ),
                   FlatButton(
-                    onPressed: () async{
+                    onPressed: () async {
                       var typedName = await Navigator.push(
-                        context,MaterialPageRoute(
-                        builder: (context){
-                          return CityScreen();
-                        },
-                      ),
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return CityScreen();
+                          },
+                        ),
                       );
-                      if(typedName != null) {
-                        var weatherData = await weather.getCityWeather(typedName);
+                      if (typedName != null) {
+                        var weatherData =
+                            await weather.getCityWeather(typedName);
                         updateUI(weatherData);
                       }
                     },

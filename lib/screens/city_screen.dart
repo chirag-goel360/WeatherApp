@@ -39,19 +39,19 @@ class _CityScreenState extends State<CityScreen> {
               ),
               Container(
                 padding: EdgeInsets.all(20.0),
-                child: new TextField(
+                child: TextField(
                   style: TextStyle(
                     color: Colors.black,
                   ),
                   decoration: kTextFieldInputDecoration,
-                  onChanged: (value){
+                  onChanged: (value) {
                     cityName = value;
                   },
                 ),
               ),
               FlatButton(
                 onPressed: () {
-                  Navigator.pop(context,cityName);
+                  Navigator.pop(context, cityName);
                 },
                 child: Text(
                   'Get Weather',
